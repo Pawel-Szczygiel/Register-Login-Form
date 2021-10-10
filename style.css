@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(315deg,  #fee648 , #feaf48);
+    padding: 20px;
+}
+
+section::before {
+    content: "";
+    position:absolute;
+    top: 20%;
+    right: 20%;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    background: linear-gradient(#f9d924, #ff2c24 );
+    animation: animate 7s ease-in-out infinite;
+}
+
+
+section .wraper {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0px 15px 50px rgba(0,0,0, 0.2);
+    border: 2px solid rgba(255,255,255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    overflow: hidden;
+
+}
+
+section .wraper .user {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+section .wraper .user .imgBox {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #ff0;
+    transition: .5s .5s ;
+
+}
+
+
+section .wraper .user .imgBox  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s ;
+}
+
+section .wraper #first {
+    transition-delay: 1s;
+} 
+section .wraper.active #first {
+    transition: 1s 1s;
+} 
+/* 
+section .container.active .user .imgBox {
+    transition-delay: .5s;
+} */
+section .wraper.active .user .formBox {
+    transition-delay:  1s;
+}
+
+section .wraper .user .formBox {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    transition: .5s ;
+}
+section .wraper .user .formBox form {
+    position: relative;
+}
+
+section .wraper .user .formBox form h2 {
+    font-size: 20px;
+    background: linear-gradient(to right , #001a0d,#68d305);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent ;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+section .wraper .user .formBox form .inputBox {
+    
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin: 30px 0 ;
+    /* color: #0c5a5f; */
+}
+
+section .wraper .user .formBox .inputBox input {
+    position: absolut;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    letter-spacing: 1px;
+    font-size: 16px;
+    padding: 0 10px;
+    z-index: 233;
+    color: rgb(155, 6, 6);
+}
+section .wraper .user .formBox .inputBox .text {
+    position: absolute;
+    top: 0;
+    left: 0;    
+    color:#cc1111;
+    line-height: 40px;
+    font-size: 16px;
+    padding: 0 10px; 
+    display: block;
+    transition:  .5s;
+    pointer-events: none;
+}
+section .wraper .user .formBox .inputBox input:focus + .text, 
+section .wraper .user .formBox .inputBox input:valid + .text {
+    top: -35px;
+    left: -10px;
+    font-size: 14px;
+    color: #0c5a5f;
+}
+
+section .wraper .user .formBox .inputBox .line {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 25px rgba(0,0,0, 0.1);
+    border-right: 1px solid rgba(255,255,255, 0.2);
+    border-bottom: 1px solid rgba(255,255,255, 0.2);
+    backdrop-filter: blur(20px);
+    transition: .5s;
+    border-radius: 3px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+section .wraper .user .formBox .inputBox input:focus ~.line,
+section .wraper .user .formBox .inputBox input:valid ~.line {
+    height: 100%;
+    border-radius: 5px;
+}
+
+section .wraper .user  form button {
+    width: 100%;
+    position: relative;
+    height: 40px;
+    display: block;
+    border: none;
+    outline: none;
+    background:rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255,255,255, 0.2);
+    border-bottom: 1px solid rgba(255,255,255, 0.2);
+    box-shadow: 0 5px 45px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+section  form button::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255,255, 255, 0.5) ;
+    transform: skew(45deg)  translateX(350px);
+    transition:  .5s;
+
+}
+section .wraper .user .formBox form button:hover{
+    color: #0c5a5f;
+}
+
+section .wraper .user .formBox form button:hover::before {
+    transform: skew(60deg)  translateX(-350px);
+
+}
+
+section .wraper .user .formBox form .signup {
+    position: relative;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color:#555;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+section .wraper .user .formBox form .signup a {
+    font-weight: 600;
+    text-decoration: none;
+    color: #68d305;
+}
+section .wraper .user .formBox form .signin {
+    position: relative;
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color:#555;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+section .wraper .user .formBox form .signin a {
+    font-weight: 600;
+    text-decoration: none;
+    color: #68d305;
+}
+
+section .wraper .user .formBox form  a:hover {
+    color: #3a6d07;
+   
+}
+
+
+section .wraper .signupBox {
+    pointer-events: none;
+}
+section .wraper.active .signupBox {
+    pointer-events: initial;
+}
+
+section .wraper .signupBox .formBox {
+    left:  100%;
+    
+}
+section .wraper.active .signupBox .formBox {
+    left:  0;
+    
+}
+section .wraper .signupBox .imgBox {
+    left: -100%;
+    
+}
+section .wraper.active .signupBox .imgBox {
+    left: 0;
+}
+
+
+
+
+section .wraper .signinBox .formBox {
+    left:  0;
+    
+}
+section .wraper.active .signinBox .formBox {
+    left:  100%;
+    
+}
+section .wraper .signinBox .imgBox {
+    left: 0;
+    
+}
+section .wraper.active .signinBox .imgBox {
+    left: -100%;
+}
+
+
+@media (max-width: 840px) {
+     section .wraper {
+         max-width: 400px;
+        }
+        section .wraper .imgBox {
+            display: none;
+        }
+    
+        section .wraper .user .formBox {
+            width: 100%;
+     
+    }
+}
+
+
+
+
+
+/* 
+ @keyframes animate {
+    0%,100%{
+        transform: translateY(30px);
+   }
+   50%{
+       transform: translateY(-60px);
+   }
+} */
