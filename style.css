@@ -78,10 +78,10 @@ section .wraper #first {
 section .wraper.active #first {
     transition: 1s 1s;
 } 
-/* 
+
 section .container.active .user .imgBox {
     transition-delay: .5s;
-} */
+} 
 section .wraper.active .user .formBox {
     transition-delay:  1s;
 }
