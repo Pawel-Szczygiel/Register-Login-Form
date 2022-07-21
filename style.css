@@ -315,11 +315,6 @@ section .wraper.active .signinBox .imgBox {
     }
 }
 
-
-
-
-
-/* 
  @keyframes animate {
     0%,100%{
         transform: translateY(30px);
@@ -327,4 +322,4 @@ section .wraper.active .signinBox .imgBox {
    50%{
        transform: translateY(-60px);
    }
-} */
+} 
